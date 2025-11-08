@@ -981,7 +981,7 @@ a:focus {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 400px) {
   .has-text-justified,
   .content.has-text-justified,
   .content.has-text-justified p {
