@@ -869,3 +869,48 @@ a:focus {
     padding: 0.4rem 0.2rem;
   }
 }
+
+/* Make table scrollable on mobile */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+.leaderboard-table {
+  min-width: 900px; /* Prevents table from shrinking too much */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .table-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .leaderboard-table {
+    font-size: 0.75rem;
+    min-width: 1000px; /* Maintain readable size */
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.5rem 0.3rem;
+    white-space: nowrap;
+  }
+  
+  .leaderboard-table th.model-column,
+  .leaderboard-table td.model-name {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background-color: inherit;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .leaderboard-table {
+    font-size: 0.7rem;
+  }
+}
