@@ -982,12 +982,23 @@ a:focus {
 }
 
 @media screen and (max-width: 480px) {
-  .content.has-text-justified {
+  .has-text-justified,
+  .content.has-text-justified,
+  .content.has-text-justified p {
     text-align: left !important;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.05rem;
+    padding-right: 0.5rem;
   }
 
+  .title.is-3 {
+    padding-left: 0.05rem;
+    padding-right: 1rem;
+  }
+  
+  .title.is-3::after {
+    left: 46%;
+    margin-left: 0;
+  }
 
   .leaderboard-table {
     font-size: 0.65rem;
