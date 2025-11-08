@@ -307,7 +307,7 @@
 
 <!-- Leaderboard Section -->
 <section class="section hero">
-  <div class="container is-max-desktop">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Leaderboard</h2>
@@ -332,10 +332,14 @@
             Human Baselines
           </span>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Leaderboard Table -->
-        <div class="table-container">
-          <table class="table is-hoverable leaderboard-table">
+  <!-- Table outside the narrow container -->
+  <div class="leaderboard-wrapper">
+    <div class="table-container">
+      <table class="table is-hoverable leaderboard-table">
             <thead>
               <tr>
                 <th rowspan="2" class="model-column">Model</th>
@@ -611,17 +615,17 @@
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <p class="has-text-left" style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
-          <strong>Note:</strong> For mmJEE-Eval, <strong>Acc. % (Full)</strong> represents Pass@1 accuracy on the full set of 1,460 questions, 
-          <strong>Acc. % (2025 set)</strong> presents Pass@1 accuracy on the held-out 2025 subset, 
-          <strong>Marks (%)</strong> represents total score on the two papers of JEE Advanced 2025 following the official marking scheme, 
-          <strong>Marks w/ CT (%)</strong> presents confidence thresholded scores. 
-          For other benchmarks, we source Pass@1 accuracies from respective leaderboards.
-        </p>
-      </div>
     </div>
+  </div>
+
+  <div class="container">
+    <p class="has-text-left" style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+      <strong>Note:</strong> For mmJEE-Eval, <strong>Acc. % (Full)</strong> represents Pass@1 accuracy on the full set of 1,460 questions, 
+      <strong>Acc. % (2025 set)</strong> presents Pass@1 accuracy on the held-out 2025 subset, 
+      <strong>Marks (%)</strong> represents total score on the two papers of JEE Advanced 2025 following the official marking scheme, 
+      <strong>Marks w/ CT (%)</strong> presents confidence thresholded scores. 
+      For other benchmarks, we source Pass@1 accuracies from respective leaderboards.
+    </p>
   </div>
 </section>
 <!-- End Leaderboard Section -->

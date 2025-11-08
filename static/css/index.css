@@ -790,8 +790,9 @@ a:focus {
 .leaderboard-table {
   width: 100%;
   font-size: 0.85rem;
-  margin: 0 auto;
+  margin: 0;
   border-collapse: collapse;
+  min-width: 1100px; /* Force horizontal scroll on mobile */
 }
 
 .leaderboard-table thead {
@@ -813,7 +814,7 @@ a:focus {
 
 .leaderboard-table th.model-column {
   text-align: left !important;
-  min-width: 180px;
+  min-width: 80px;
 }
 
 .leaderboard-table td {
@@ -858,59 +859,86 @@ a:focus {
   filter: brightness(0.95);
 }
 
-/* Responsive adjustments */
+/* Mobile specific */
 @media screen and (max-width: 768px) {
-  .leaderboard-table {
-    font-size: 0.7rem;
+  .leaderboard-wrapper {
+    padding: 0 0.5rem;
   }
   
-  .leaderboard-table th,
-  .leaderboard-table td {
-    padding: 0.4rem 0.2rem;
-  }
-}
-
-/* Make table scrollable on mobile */
-.table-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 1rem 0;
-}
-
-.leaderboard-table {
-  min-width: 900px; /* Prevents table from shrinking too much */
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
   .table-container {
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin: 1rem 0;
   }
   
   .leaderboard-table {
-    font-size: 0.75rem;
-    min-width: 1000px; /* Maintain readable size */
+    font-size: 0.85rem;
+    min-width: 1000px;
   }
   
   .leaderboard-table th,
   .leaderboard-table td {
-    padding: 0.5rem 0.3rem;
+    padding: 0.4rem 0.3rem;
     white-space: nowrap;
   }
   
+  /* Reduce model column width on mobile */
   .leaderboard-table th.model-column,
   .leaderboard-table td.model-name {
+    min-width: 40px;
+    max-width: 80px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.25rem;
     position: sticky;
     left: 0;
     z-index: 10;
-    background-color: inherit;
+  }
+  
+  /* Keep background colors for sticky column */
+  .leaderboard-table th.model-column {
+    background-color: #f5f5f5;
+  }
+  
+  .closed-model-row td.model-name {
+    background-color: #e3f2fd;
+  }
+  
+  .open-model-row td.model-name {
+    background-color: #f3e5f5;
+  }
+  
+  .human-baseline-row td.model-name {
+    background-color: #fff3e0;
+  }
+  
+  .baseline-row td.model-name {
+    background-color: #fafafa;
+  }
+  
+  .delta-row td.model-name {
+    background-color: #f5f5f5;
+  }
+  
+  /* Add shadow to sticky column for depth */
+  .leaderboard-table th.model-column,
+  .leaderboard-table td.model-name {
     box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Make metric columns slightly wider to compensate */
+  .leaderboard-table th.metric-column,
+  .leaderboard-table td:not(.model-name) {
+    min-width: 65px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .leaderboard-table {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+  }
+  
+  .leaderboard-table th.model-column,
+  .leaderboard-table td.model-name {
+    min-width: 100px;
+    max-width: 120px;
+    font-size: 0.6rem;
   }
 }
