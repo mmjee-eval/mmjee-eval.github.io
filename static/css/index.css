@@ -937,8 +937,8 @@ a:focus {
   
   .leaderboard-table th.model-column,
   .leaderboard-table td.model-name {
-    min-width: 100px;
-    max-width: 120px;
-    font-size: 0.6rem;
+    min-width: 40px;
+    max-width: 80px;
+    font-size: 0.65rem;
   }
 }
